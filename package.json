@@ -1,0 +1,29 @@
+{
+  "name": "sweet-delights",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsnd ./src/index.ts",
+    "build": "tsc",
+    "start": "node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonfile": "^6.1.0",
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jsonfile": "^6.1.4",
+    "@types/node": "^22.5.2",
+    "dotenv": "^16.4.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.4"
+  }
+}
