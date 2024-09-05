@@ -2,8 +2,30 @@
   "products": [
     {
       "id": "ac838afb-d8bb-4a40-8984-761152735c77",
-      "description": "un producto buenísimo",
-      "sellPrice": "50000"
+      "type": "Torta",
+      "name": "Evento Empresarial",
+      "flavour": "Chocolate",
+      "filling": "Buttercream",
+      "complements": "Pintura aerografo",
+      "price": 50000
+    },
+    {
+      "id": "2096054b-76a0-45db-b966-5a3eea78a981",
+      "type": "Cupcakes",
+      "name": "Frozen",
+      "flavour": "Marmolado",
+      "filling": "Nutella",
+      "complements": "Toppers",
+      "price": 20000
+    },
+    {
+      "id": "2096054b-76a0-45db-b966-5a3eea78a98",
+      "type": "Cupcakes",
+      "name": "River",
+      "flavour": "Marmolado",
+      "filling": "Dulce de leche",
+      "complements": "Toppers",
+      "price": 20000
     }
   ]
 }

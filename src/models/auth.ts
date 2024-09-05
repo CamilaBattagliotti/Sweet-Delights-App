@@ -1,5 +1,5 @@
 import { writeFileSync, readFileSync } from "jsonfile";
-
+import { AuthUser } from "../utils/types";
 class AuthModel {
   static read() {
     try {
@@ -9,7 +9,7 @@ class AuthModel {
       throw error;
     }
   }
-  static write(data) {
+  static write(data: AuthUser) {
     try {
       writeFileSync("./src/database/auth.json", data);
       return true;

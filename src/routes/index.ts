@@ -8,6 +8,6 @@ import checkToken from "../middlewares/check-token";
 const indexRouter = Router();
 
 indexRouter.use("/auth", authRouter);
-indexRouter.use("/products", checkToken, productsRouter);
+indexRouter.use("/products", productsRouter);
 
 export default indexRouter;
