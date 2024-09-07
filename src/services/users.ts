@@ -2,24 +2,26 @@ import UsersModel from "../models/users";
 
 import { v4 as uuidv4 } from "uuid";
 
+import { User } from "../utils/types";
+
 class UsersService {
-  static read() {
+  static async read() {
     try {
-      return UsersModel.read();
+      return await UsersModel.read();
     } catch (error) {
       throw error;
     }
   }
 
-  static create(data: { name: string; email: string }) {
+  static async create(data: User) {
     try {
       const { name, email } = data;
-      const db = this.read();
+      const db = await this.read();
       const id = uuidv4();
 
       db.users.push({ id, name, email });
 
-      UsersModel.write(db);
+      await UsersModel.write(db);
 
       return id;
     } catch (error) {
@@ -27,9 +29,9 @@ class UsersService {
     }
   }
 
-  static getByEmail(email: string) {
+  static async getByEmail(email: string) {
     try {
-      const db = this.read();
+      const db = await this.read();
       const user = db.users.find((user) => user.email == email);
       if (!user) {
         const error = new Error("Usuario no encontrado");

@@ -6,18 +6,20 @@ import createHash from "../utils/create-hash";
 
 import { v4 as uuidv4 } from "uuid";
 
+import { validateSignup, validateLogin } from "../schemas/auth";
+
 class AuthService {
-  static read() {
+  static async read() {
     try {
-      return AuthModel.read();
+      return await AuthModel.read();
     } catch (error) {
       throw error;
     }
   }
 
-  static getUserById(id: string) {
+  static async getUserById(id: string) {
     try {
-      const authDb = this.read();
+      const authDb = await this.read();
       const user = authDb.auth.find((el) => el.userId == id);
       if (!user) {
         const error = new Error("Usuario no encontrado");
@@ -30,27 +32,44 @@ class AuthService {
     }
   }
 
-  static signup(data: { name: string; email: string; password: string }) {
+  static async signup(data: { name: string; email: string; password: string }) {
     try {
       const { name, email, password } = data;
-      const authDb = this.read();
-      const userId = UsersService.create({ name, email });
+      const result = validateSignup(data);
+      if (!result.success) {
+        const error = new Error("Los datos ingresados son inválidos");
+        error["statusCode"] = 400;
+
+        throw error;
+      }
+
+      const authDb = await this.read();
+      const userId = await UsersService.create({ name, email });
       const id = uuidv4();
       const rawToken = uuidv4();
       const token = createHash(rawToken);
 
       authDb.auth.push({ id, userId, password: createHash(password), token });
-      AuthModel.write(authDb);
+      await AuthModel.write(authDb);
       return token;
     } catch (error) {
       throw error;
     }
   }
-  static login(data: { email: string; password: string }) {
+  static async login(data: { email: string; password: string }) {
     try {
       const { email, password } = data;
-      const user = UsersService.getByEmail(email);
-      const authUser = this.getUserById(user.id);
+
+      const result = validateLogin(data);
+      if (!result.success) {
+        const error = new Error("Los datos ingresados son inválidos");
+        error["statusCode"] = 400;
+
+        throw error;
+      }
+
+      const user = await UsersService.getByEmail(email);
+      const authUser = await this.getUserById(user.id);
 
       if (authUser.password != createHash(password)) {
         const error = new Error("La Contraseña ingresada es incorrecta");
@@ -62,7 +81,7 @@ class AuthService {
       throw error;
     }
   }
-  static logout() {}
+  static async logout() {}
 }
 
 export default AuthService;

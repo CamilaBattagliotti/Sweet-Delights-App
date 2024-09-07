@@ -1,18 +1,18 @@
-import { readFileSync, writeFileSync } from "jsonfile";
+import { readFile, writeFile } from "jsonfile";
 import { Product } from "../utils/types";
 
 class ProductsModel {
-  static read() {
+  static async read() {
     try {
-      return readFileSync("./src/database/products.json");
+      return await readFile("./src/database/products.json");
     } catch (error) {
       throw error;
     }
   }
 
-  static write(data) {
+  static async write(data) {
     try {
-      writeFileSync("./src/database/products.json", data);
+      await writeFile("./src/database/products.json", data);
       return true;
     } catch (error) {
       throw error;

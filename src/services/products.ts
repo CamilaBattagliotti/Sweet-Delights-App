@@ -1,20 +1,31 @@
-import ProductsModel from "../models/products";
 import { v4 as uuidv4 } from "uuid";
+import ProductsModel from "../models/products";
 import { Product } from "../utils/types";
+import { validateProduct, validateUpdatedProduct } from "../schemas/products";
 
 class ProductsService {
-  static getAll() {
+  static async getSelectedProducts(choclo) {
     try {
-      const products = ProductsModel.read();
-      return products.products;
+      const { products } = await ProductsModel.read();
+
+      if (Object.entries(choclo).length == 0) {
+        return products;
+      }
+
+      const filteredProducts = products.filter((prod) =>
+        prod.type.includes(choclo.type)
+      );
+
+      return filteredProducts;
     } catch (error) {
       throw error;
     }
   }
-  static getById(id: string) {
+
+  static async getById(id: string) {
     try {
-      const products = this.getAll();
-      const product = products.find((prod) => prod.id == id);
+      const db = await ProductsModel.read();
+      const product = db.products.find((prod) => prod.id == id);
 
       if (!product) {
         const error = new Error("Producto no encontrado");
@@ -26,57 +37,72 @@ class ProductsService {
       throw error;
     }
   }
-  static create(product: Product) {
+
+  static async create(product) {
     try {
-      const db = ProductsModel.read();
+      const result = validateProduct(product);
+      // console.log("Soy el producto  ", product);
+      // console.log("Soy el result data  ", result.data);
+      // console.log(result.error.issues);
+
+      if (!result.success) {
+        const error = new Error("Datos faltantes o invalidos");
+        error["statusCode"] = 400;
+        error["issues"] = result.error.issues;
+
+        throw error;
+      }
+
+      const db = await ProductsModel.read();
 
       const id = uuidv4();
-      const { type, name, flavour, filling, complements, price } = product;
 
-      const newProduct = {
-        id,
-        type,
-        name,
-        flavour,
-        filling,
-        complements,
-        price,
-      };
+      const newProduct = { id, ...result.data };
+      // console.log("Soy el NEW producto  ", newProduct);
+
+      // const { type, name, flavour, filling, complements, price } = product;
+
+      // const newProduct = {
+      //   id,
+      //   type,
+      //   name,
+      //   flavour,
+      //   filling,
+      //   complements,
+      //   price,
+      // };
 
       db.products.push(newProduct);
 
-      ProductsModel.write(db);
+      await ProductsModel.write(db);
 
       return newProduct;
     } catch (error) {
       throw error;
     }
   }
-  static updateById(id: string, data) {
+
+  static async updateById(id: string, data) {
     try {
-      const db = ProductsModel.read();
+      const result = validateUpdatedProduct(data);
+      const db = await ProductsModel.read();
 
       let products = db.products.map((prod) =>
-        prod.id == id ? { ...prod, ...data } : prod
+        prod.id == id ? { ...prod, ...result.data } : prod
       );
-
-      // if (!product) {
-      //   const error = new Error("Producto no encontrado");
-      //   error["statusCode"] = 404;
-
-      //   throw error;
-      // }
 
       db.products = products;
 
-      ProductsModel.write(db);
+      await ProductsModel.write(db);
+      return this.getById(id);
     } catch (error) {
       throw error;
     }
   }
-  static deleteById(id: string) {
+
+  static async deleteById(id: string) {
     try {
-      const db = ProductsModel.read();
+      const db = await ProductsModel.read();
       const filteredProducts = db.products.filter((prod) => prod.id != id);
 
       if (filteredProducts.length == db.products.length) {
@@ -88,7 +114,7 @@ class ProductsService {
 
       db.products = filteredProducts;
 
-      ProductsModel.write(db);
+      await ProductsModel.write(db);
     } catch (error) {
       throw error;
     }
