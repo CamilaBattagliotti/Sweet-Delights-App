@@ -2,30 +2,107 @@
   "products": [
     {
       "id": "ac838afb-d8bb-4a40-8984-761152735c77",
-      "type": "Torta",
+      "type": "torta",
       "name": "Evento Empresarial",
       "flavour": "Chocolate",
       "filling": "Buttercream",
-      "complements": "Pintura aerografo",
-      "price": 50000
+      "complements": "Pintura aerografo"
     },
     {
       "id": "2096054b-76a0-45db-b966-5a3eea78a981",
-      "type": "Cupcakes",
+      "type": "cupcakes",
       "name": "Frozen",
       "flavour": "Marmolado",
-      "filling": "Nutella",
-      "complements": "Toppers",
-      "price": 20000
+      "filling": "Crema chantilly",
+      "complements": "Toppers"
     },
     {
       "id": "2096054b-76a0-45db-b966-5a3eea78a98",
-      "type": "Torta",
-      "name": "Bodas",
+      "type": "cupcakes",
+      "name": "cumple",
       "flavour": "Marmolado",
-      "filling": "Dulce de leche",
-      "complements": "Toppers",
-      "price": 20000
+      "filling": "Ganache de chocolate blanco",
+      "complements": "Toppers"
+    },
+    {
+      "id": "2c99a69c-51bf-4300-a0fe-84181ced0d67",
+      "type": "postre",
+      "name": "Selva Negra",
+      "flavour": "Chocolate",
+      "filling": "Ganache de chocolate negro",
+      "complements": "frutos rojos"
+    },
+    {
+      "id": "c99a69c-51bf-4300-a0fe-84181ced0d67",
+      "type": "postre",
+      "name": "Selva Negra",
+      "flavour": "Chocolate",
+      "filling": "Ganache de chocolate negro",
+      "complements": "frutos rojos"
+    },
+    {
+      "id": "2ecc99fa-4d55-412a-854c-22713cf542b7",
+      "type": "postre",
+      "name": "Rogel",
+      "flavour": "hojaldre",
+      "filling": "DDL",
+      "complements": "perlas doradas"
+    },
+    {
+      "id": "4d4f0da6-755f-4c80-ad70-ca781ea97fde",
+      "type": "torta",
+      "name": "bautismo",
+      "flavour": "vainilla",
+      "filling": "crema moka",
+      "complements": "imagen comestible"
+    },
+    {
+      "id": "d2fa71d9-9c11-4d1c-90a5-1d656ac0bae0",
+      "type": "torta",
+      "name": "bodas",
+      "flavour": "chocolate",
+      "filling": "frutos rojos",
+      "complements": "pasta y toppers"
+    },
+    {
+      "id": "7dc48a86-b862-4e87-871d-d7750fbe76a8",
+      "type": "cupcakes",
+      "name": "cumpleanos",
+      "flavour": "marmolado",
+      "filling": "crema bon o bon",
+      "complements": "golosinas"
+    },
+    {
+      "id": "2609286d-f7e7-4e1c-96f1-312a4a163542",
+      "type": "alfajores",
+      "name": "navidad",
+      "flavour": "chocolate",
+      "filling": "DDL y copitos de chocolate negro",
+      "complements": ""
+    },
+    {
+      "id": "fc6839b6-92b1-47e1-b294-135059d68417",
+      "type": "torta",
+      "name": "evento cumpleanos",
+      "flavour": "vainilla",
+      "filling": "ganache de chocolate blanco",
+      "complements": "toppers"
+    },
+    {
+      "id": "632552de-4b62-4e85-affd-0b738ef03bda",
+      "type": "cupcakes",
+      "name": "bautismo",
+      "flavour": "vainilla",
+      "filling": "buttercream",
+      "complements": "mini galletitas"
+    },
+    {
+      "id": "06983c25-b077-409f-a49b-489c7ea6be87",
+      "type": "postre",
+      "name": "evento empresarial",
+      "flavour": "marmolado",
+      "filling": "buttercream",
+      "complements": "m&m's"
     }
   ]
 }

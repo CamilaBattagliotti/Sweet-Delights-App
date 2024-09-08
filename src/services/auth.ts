@@ -69,19 +69,44 @@ class AuthService {
       }
 
       const user = await UsersService.getByEmail(email);
-      const authUser = await this.getUserById(user.id);
+      //const authUser = await this.getUserById(user.id);
+      const authDb = await AuthModel.read();
+      const authUser = authDb.auth.find((auth) => auth.userId == user.id);
 
       if (authUser.password != createHash(password)) {
         const error = new Error("La Contraseña ingresada es incorrecta");
         error["statusCode"] = 400;
         throw error;
       }
+
+      const token = createHash(uuidv4());
+      authUser.token = token;
+      await AuthModel.write(authDb);
+
       return authUser.token;
     } catch (error) {
       throw error;
     }
   }
-  static async logout() {}
+  static async logout(token) {
+    try {
+      const authDb = await AuthModel.read();
+      const authUser = authDb.auth.find((auth) => auth.token == token);
+
+      if (!authUser) {
+        const error = new Error("token no encontrado");
+        error["statusCode"] = 404;
+
+        throw error;
+      }
+
+      authUser.token = null;
+
+      await AuthModel.write(authDb);
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default AuthService;

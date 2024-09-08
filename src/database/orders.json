@@ -1,0 +1,53 @@
+{
+  "orders": [
+    {
+      "id": "ac838afb-d8bb-4a40-8984-761152735c7",
+      "client": "Cami 😊",
+      "product": "alfajores navidad",
+      "quantity": 12,
+      "price": 50000
+    },
+    {
+      "id": "c838afb-d8bb-4a40-8984-761152735c77",
+      "client": "Julia",
+      "product": "torta bodas",
+      "quantity": 1,
+      "price": 120000
+    },
+    {
+      "id": "ac38afb-d8bb-4a40-8984-761152735c77",
+      "client": "Martina",
+      "product": "cupcakes frozen",
+      "quantity": 12,
+      "price": 90000
+    },
+    {
+      "id": "ac838afb-d8bb-4a40-984-761152735c77",
+      "client": "Matias",
+      "product": "postre rogel",
+      "quantity": 1,
+      "price": 80000
+    },
+    {
+      "id": "ac838a-d8bb-4a40-8984-761152735c77",
+      "client": "Juan Bautista",
+      "product": "torta cumple",
+      "quantity": 1,
+      "price": 75000
+    },
+    {
+      "id": "50cb9d9c-39b1-4a2c-a5fe-9b71e061a093",
+      "client": "Cedric",
+      "product": "postre lemon pie",
+      "quantity": 2,
+      "price": 70000
+    },
+    {
+      "id": "50cb9d9c-39b1-4a2c-a5fe-9b71e06093",
+      "client": "Nicolas",
+      "product": "cupcakes bautismo",
+      "quantity": 12,
+      "price": 70000
+    }
+  ]
+}

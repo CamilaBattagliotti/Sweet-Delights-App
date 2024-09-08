@@ -21,7 +21,14 @@ class AuthController {
       next(error);
     }
   }
-  static async logout(req: Request, res: Response, next: NextFunction) {}
+  static async logout(req: Request, res: Response, next: NextFunction) {
+    try {
+      await AuthService.logout(req.query.token);
+      res.status(200).json({ message: "token eliminado correctamente" });
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 export default AuthController;

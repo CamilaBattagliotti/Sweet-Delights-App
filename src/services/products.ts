@@ -4,16 +4,16 @@ import { Product } from "../utils/types";
 import { validateProduct, validateUpdatedProduct } from "../schemas/products";
 
 class ProductsService {
-  static async getSelectedProducts(choclo) {
+  static async getSelectedProducts(opt) {
     try {
       const { products } = await ProductsModel.read();
 
-      if (Object.entries(choclo).length == 0) {
+      if (Object.entries(opt).length == 0) {
         return products;
       }
 
       const filteredProducts = products.filter((prod) =>
-        prod.type.includes(choclo.type)
+        prod.type.includes(opt.type)
       );
 
       return filteredProducts;

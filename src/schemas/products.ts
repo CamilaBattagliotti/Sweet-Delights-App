@@ -36,12 +36,12 @@ const productsSchema = z.object({
 
   complements: z.string().optional(),
 
-  price: z
-    .number({
-      required_error: "El precio es requerido",
-      invalid_type_error: "El precio debe ser un numero",
-    })
-    .positive("El numero debe ser positivo"),
+  // price: z
+  //   .number({
+  //     required_error: "El precio es requerido",
+  //     invalid_type_error: "El precio debe ser un numero",
+  //   })
+  //   .positive("El numero debe ser positivo"),
 });
 
 export function validateProduct(data) {
@@ -87,13 +87,13 @@ const UpdateProductsSchema = z.object({
 
   complements: z.string().optional(),
 
-  price: z
-    .number({
-      required_error: "El precio es requerido",
-      invalid_type_error: "El precio debe ser un numero",
-    })
-    .positive("El numero debe ser positivo")
-    .optional(),
+  // price: z
+  //   .number({
+  //     required_error: "El precio es requerido",
+  //     invalid_type_error: "El precio debe ser un numero",
+  //   })
+  //   .positive("El numero debe ser positivo")
+  //   .optional(),
 });
 
 export function validateUpdatedProduct(data) {
