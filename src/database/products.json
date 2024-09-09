@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "ac838afb-d8bb-4a40-8984-761152735c77",
-      "type": "torta",
+      "type": "Torta",
       "name": "Evento Empresarial",
       "flavour": "Chocolate",
       "filling": "Buttercream",
@@ -10,7 +10,7 @@
     },
     {
       "id": "2096054b-76a0-45db-b966-5a3eea78a981",
-      "type": "cupcakes",
+      "type": "Cupcakes",
       "name": "Frozen",
       "flavour": "Marmolado",
       "filling": "Crema chantilly",
@@ -18,7 +18,7 @@
     },
     {
       "id": "2096054b-76a0-45db-b966-5a3eea78a98",
-      "type": "cupcakes",
+      "type": "Cupcakes",
       "name": "Fletch",
       "flavour": "Marmolado",
       "filling": "Ganache de chocolate blanco",
@@ -26,7 +26,7 @@
     },
     {
       "id": "2c99a69c-51bf-4300-a0fe-84181ced0d67",
-      "type": "postre",
+      "type": "Postre",
       "name": "Selva Negra",
       "flavour": "Chocolate",
       "filling": "Ganache de chocolate negro",
@@ -34,7 +34,7 @@
     },
     {
       "id": "2ecc99fa-4d55-412a-854c-22713cf542b7",
-      "type": "postre",
+      "type": "Postre",
       "name": "Rogel",
       "flavour": "hojaldre",
       "filling": "DDL",
@@ -42,7 +42,7 @@
     },
     {
       "id": "4d4f0da6-755f-4c80-ad70-ca781ea97fde",
-      "type": "torta",
+      "type": "Torta",
       "name": "bautismo",
       "flavour": "vainilla",
       "filling": "crema moka",
@@ -50,7 +50,7 @@
     },
     {
       "id": "d2fa71d9-9c11-4d1c-90a5-1d656ac0bae0",
-      "type": "torta",
+      "type": "Torta",
       "name": "bodas",
       "flavour": "chocolate",
       "filling": "frutos rojos",
@@ -58,7 +58,7 @@
     },
     {
       "id": "7dc48a86-b862-4e87-871d-d7750fbe76a8",
-      "type": "cupcakes",
+      "type": "Cupcakes",
       "name": "cumpleanos",
       "flavour": "marmolado",
       "filling": "crema bon o bon",
@@ -74,7 +74,7 @@
     },
     {
       "id": "fc6839b6-92b1-47e1-b294-135059d68417",
-      "type": "torta",
+      "type": "Torta",
       "name": "aniversario",
       "flavour": "vainilla",
       "filling": "ganache de chocolate blanco",
@@ -82,7 +82,7 @@
     },
     {
       "id": "632552de-4b62-4e85-affd-0b738ef03bda",
-      "type": "cupcakes",
+      "type": "Cupcakes",
       "name": "bautismo",
       "flavour": "vainilla",
       "filling": "buttercream",
@@ -90,8 +90,8 @@
     },
     {
       "id": "06983c25-b077-409f-a49b-489c7ea6be87",
-      "type": "postre",
-      "name": "evento empresarial",
+      "type": "Postre",
+      "name": "Evento empresarial",
       "flavour": "marmolado",
       "filling": "buttercream",
       "complements": "m&m's"

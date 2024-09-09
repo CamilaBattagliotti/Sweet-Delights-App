@@ -14,7 +14,7 @@ class OrdersService {
       }
 
       const filteredOrders = orders.filter((order) =>
-        order.client.includes(opt.client)
+        order.client.toLowerCase().includes(opt.client.toLowerCase())
       );
 
       return filteredOrders;

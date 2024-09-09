@@ -16,7 +16,7 @@ class ProductsService {
       }
 
       const filteredProducts = products.filter((prod) =>
-        prod.type.includes(opt.type)
+        prod.type.toLowerCase().includes(opt.type.toLowerCase())
       );
 
       return filteredProducts;
