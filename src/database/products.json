@@ -19,21 +19,13 @@
     {
       "id": "2096054b-76a0-45db-b966-5a3eea78a98",
       "type": "cupcakes",
-      "name": "cumple",
+      "name": "Fletch",
       "flavour": "Marmolado",
       "filling": "Ganache de chocolate blanco",
       "complements": "Toppers"
     },
     {
       "id": "2c99a69c-51bf-4300-a0fe-84181ced0d67",
-      "type": "postre",
-      "name": "Selva Negra",
-      "flavour": "Chocolate",
-      "filling": "Ganache de chocolate negro",
-      "complements": "frutos rojos"
-    },
-    {
-      "id": "c99a69c-51bf-4300-a0fe-84181ced0d67",
       "type": "postre",
       "name": "Selva Negra",
       "flavour": "Chocolate",
@@ -83,7 +75,7 @@
     {
       "id": "fc6839b6-92b1-47e1-b294-135059d68417",
       "type": "torta",
-      "name": "evento cumpleanos",
+      "name": "aniversario",
       "flavour": "vainilla",
       "filling": "ganache de chocolate blanco",
       "complements": "toppers"

@@ -14,11 +14,10 @@ class UsersService {
       throw error;
     }
   }
-
   static async create(data: User) {
     try {
       const { name, email } = data;
-      const db = await this.read();
+      const db = await await UsersModel.read();
       const id = uuidv4();
 
       db.users.push({ id, name, email });
@@ -33,10 +32,12 @@ class UsersService {
 
   static async getByEmail(email: string) {
     try {
-      const db = await this.read();
+      const db = await await UsersModel.read();
       const user = db.users.find((user) => user.email == email);
       if (!user) {
-        const error = new Error("Usuario no encontrado");
+        const error = new Error(
+          "El usuario no existe en nuestra base de datos"
+        );
         error["statusCode"] = 404;
         throw error;
       }
@@ -52,7 +53,9 @@ class UsersService {
       const user = db.users.find((user) => user.id == id);
 
       if (!user) {
-        const error = new Error("Usuario no encontrado");
+        const error = new Error(
+          "El usuario no existe en nuestra base de datos"
+        );
         error["statusCode"] = 404;
         throw error;
       }

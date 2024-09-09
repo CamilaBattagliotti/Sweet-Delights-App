@@ -1,6 +1,9 @@
-import { v4 as uuidv4 } from "uuid";
 import ProductsModel from "../models/products";
+
+import { v4 as uuidv4 } from "uuid";
+
 import { Product } from "../utils/types";
+
 import { validateProduct, validateUpdatedProduct } from "../schemas/products";
 
 class ProductsService {
@@ -41,9 +44,6 @@ class ProductsService {
   static async create(product) {
     try {
       const result = validateProduct(product);
-      // console.log("Soy el producto  ", product);
-      // console.log("Soy el result data  ", result.data);
-      // console.log(result.error.issues);
 
       if (!result.success) {
         const error = new Error("Datos faltantes o invalidos");
@@ -58,19 +58,6 @@ class ProductsService {
       const id = uuidv4();
 
       const newProduct = { id, ...result.data };
-      // console.log("Soy el NEW producto  ", newProduct);
-
-      // const { type, name, flavour, filling, complements, price } = product;
-
-      // const newProduct = {
-      //   id,
-      //   type,
-      //   name,
-      //   flavour,
-      //   filling,
-      //   complements,
-      //   price,
-      // };
 
       db.products.push(newProduct);
 

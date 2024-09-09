@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "jsonfile";
+
 import { Product } from "../utils/types";
 
 class ProductsModel {

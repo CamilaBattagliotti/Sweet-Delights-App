@@ -1,6 +1,8 @@
-import { v4 as uuidv4 } from "uuid";
 import OrdersModel from "../models/orders";
+
 import { validateOrder, validateUpdatedOrder } from "../schemas/orders";
+
+import { v4 as uuidv4 } from "uuid";
 
 class OrdersService {
   static async getSelectedOrders(opt) {

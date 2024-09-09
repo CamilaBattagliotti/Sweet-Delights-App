@@ -1,4 +1,5 @@
 import { writeFile, readFile } from "jsonfile";
+
 import { AuthUser } from "../utils/types";
 class AuthModel {
   static async read() {

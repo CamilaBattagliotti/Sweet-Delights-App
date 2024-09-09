@@ -1,5 +1,7 @@
 import { Router } from "express";
+
 import AuthController from "../controllers/auth";
+
 import checkToken from "../middlewares/check-token";
 
 const authRouter = Router();

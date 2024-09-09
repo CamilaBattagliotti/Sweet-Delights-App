@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "jsonfile";
+
 import { User } from "../utils/types";
 
 class UsersModel {

@@ -1,5 +1,7 @@
 import { Router } from "express";
+
 import ProductsController from "../controllers/products";
+
 import checkToken from "../middlewares/check-token";
 
 const productsRouter = Router();

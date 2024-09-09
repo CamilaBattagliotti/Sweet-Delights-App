@@ -15,3 +15,10 @@ export interface Product {
   complements: string;
   price: number;
 }
+export interface Order {
+  id: string;
+  client: string;
+  product: string;
+  quantity: number;
+  price: number;
+}
