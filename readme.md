@@ -17,7 +17,52 @@ Los datos de los productos, pedidos y usuarios se encuentran en bases de datos e
 
 ## 📌Instrucciones de uso:
 
+Desde Postman establecer la ruta: http://localhost:8080 y luego el endpoint correspondiente:
+
+#### 🔴Endpoints:
+
 Las funciones disponibles son:
+
+🧁**Registro y autenticación**. Los usuarios deben registrarse y autenticarse para acceder a las funcionalidades de productos y pedidos.
+
+- Registro:
+
+```
+POST /auth/signup
+```
+
+Ejemplo de la solicitud:
+
+```
+{
+"name": "Taylor"
+"email": "taylor@gmail.com",
+"password": "taylor123"
+}
+```
+
+- Login:
+
+```
+POST /auth/login
+```
+
+Ejemplo de la solicitud:
+
+```
+{
+"email": "taylor@gmail.com",
+"password": "taylor123"
+}
+```
+
+- Logout:
+
+Ejemplo de la solicitud:
+
+```
+POST /auth/logout
+```
 
 🧁**Productos y pedidios:**
 
@@ -137,47 +182,6 @@ Ejemplo del body del pedido:
 DELETE /orders/id
 ```
 
-🧁**Registro y autenticación**. Los usuarios deben registrarse y autenticarse para acceder a las funcionalidades de productos y pedidos.
-
-- Registro:
-
-```
-POST /auth/signup
-```
-
-Ejemplo de la solicitud:
-
-```
-{
-"name": "Taylor"
-"email": "taylor@gmail.com",
-"password": "taylor123"
-}
-```
-
-- Login:
-
-```
-POST /auth/login
-```
-
-Ejemplo de la solicitud:
-
-```
-{
-"email": "taylor@gmail.com",
-"password": "taylor123"
-}
-```
-
-- Logout:
-
-Ejemplo de la solicitud:
-
-```
-POST /auth/logout
-```
-
 🧁**Gestion de usuarios**. Pueden obtener y modificar los datos de email y nombre de usuario accediendo desde el ID del usuario ya registrado:
 
 - Buscar un usuario _por ID_.
@@ -202,7 +206,7 @@ Ejemplo del body:
 
 🧁**Token:**
 
-❗Para acceder a algunos recursos sera necesario contar con **TOKEN** que sera provisto al Registrarse como usuario y luego del Login.
+❗Para acceder a algunos recursos sera necesario contar con un **TOKEN** que sera provisto al Registrarse como usuario y luego del Login.
 
 La solicitud llevara en esos casos el token al final de la ruta requerida:
 
